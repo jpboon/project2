@@ -274,7 +274,7 @@ id <GameplayDelegate> gameplay;
         NSString *msg = [NSString stringWithFormat:@"the word was '%@'",selectedWord];
         
         // show popup
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"You suck..."
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"You suck.."
                                                         message:msg
                                                        delegate:self
                                               cancelButtonTitle:@"Okay"
