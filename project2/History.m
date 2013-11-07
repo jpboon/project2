@@ -15,27 +15,45 @@
     // create history score string
     NSMutableString *historyScore = [NSString stringWithFormat:@"%i,%@", mistakes,word];
     
-    // get plist
-    NSArray *path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES);
-    NSString *documentDirectory = [path objectAtIndex:0];
-    NSString *dataFilePath = [documentDirectory stringByAppendingPathComponent:@"history.plist"];
+    // get plist path
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES);
+    NSString *documentDirectory = [paths objectAtIndex:0];
+    NSString *path = [documentDirectory stringByAppendingPathComponent:@"history.plist"];
 
-    // write to plist
-    if ([[NSFileManager defaultManager] fileExistsAtPath:dataFilePath]) {
-        NSMutableArray *anArray = [[NSArray alloc] initWithContentsOfFile:dataFilePath].mutableCopy;
+    // create array for plist data
+    NSMutableArray *plistArray = [[NSMutableArray alloc] init];
+    
+    // create filemanager object
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    
+    // check if plist exists
+    if (![fileManager fileExistsAtPath:path]) {
         
-        //NSMutableArray *anArray = arr.mutableCopy;
+        // create file
+        NSError *error;
+        NSString *bundle = [[NSBundle mainBundle]pathForResource:@"history" ofType:@"plist"];
+        [fileManager copyItemAtPath:bundle toPath:path error:&error];
         
         // add to array
-        [anArray addObject:historyScore];
+        [plistArray addObject:historyScore];
+        
+        // write array to plist
+        [plistArray writeToFile:path atomically:YES];
+        
+    } else {
+        // copy plist to array
+        plistArray = [[NSArray alloc] initWithContentsOfFile:path].mutableCopy;
+        
+        // add to array
+        [plistArray addObject:historyScore];
         
         // remove score if more than 10 scores
-        if (anArray.count > 10) {
-            [anArray removeObjectAtIndex:0];
+        if (plistArray.count > 10) {
+            [plistArray removeObjectAtIndex:0];
         }
         
         // write array to plist
-        [anArray writeToFile:dataFilePath atomically:YES];
+        [plistArray writeToFile:path atomically:YES];
     }
 }
 

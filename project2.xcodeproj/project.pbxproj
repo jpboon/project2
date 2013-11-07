@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0476476F1809A56E0054C23F /* smallwords.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0476476E1809A56E0054C23F /* smallwords.plist */; };
-		04789DBC182821FA006C8BD7 /* history.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04789DBB182821FA006C8BD7 /* history.plist */; };
 		04BB13C31829365D0039B976 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04C7570A1800407200B308F1 /* SenTestingKit.framework */; };
 		04BB13C41829365D0039B976 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04C756E01800407100B308F1 /* UIKit.framework */; };
 		04BB13C51829365D0039B976 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04C756E21800407100B308F1 /* Foundation.framework */; };
@@ -49,8 +47,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0476476E1809A56E0054C23F /* smallwords.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = smallwords.plist; sourceTree = "<group>"; };
-		04789DBB182821FA006C8BD7 /* history.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = history.plist; sourceTree = "<group>"; };
 		04BB13C21829365D0039B976 /* project2LogicTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = project2LogicTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04BE81811801579600AF41BB /* words.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = words.plist; sourceTree = "<group>"; };
 		04BE81841801675D00AF41BB /* EvilGameplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EvilGameplay.h; sourceTree = "<group>"; };
@@ -192,8 +188,6 @@
 				04C756F21800407200B308F1 /* Default.png */,
 				04C756F41800407200B308F1 /* Default@2x.png */,
 				04C756F61800407200B308F1 /* Default-568h@2x.png */,
-				0476476E1809A56E0054C23F /* smallwords.plist */,
-				04789DBB182821FA006C8BD7 /* history.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -322,8 +316,6 @@
 				04C757031800407200B308F1 /* FlipsideViewController.xib in Resources */,
 				04BE81821801579600AF41BB /* words.plist in Resources */,
 				04BE818F180167BD00AF41BB /* HistoryViewController.xib in Resources */,
-				0476476F1809A56E0054C23F /* smallwords.plist in Resources */,
-				04789DBC182821FA006C8BD7 /* history.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -588,6 +580,7 @@
 				04BB13D11829365D0039B976 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		04C756D61800407100B308F1 /* Build configuration list for PBXProject "project2" */ = {
 			isa = XCConfigurationList;

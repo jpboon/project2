@@ -43,14 +43,14 @@ id <GameplayDelegate> gameplay;
     
     // set default values to local storage
     NSMutableDictionary *defaultValues = [[NSMutableDictionary alloc] init];
-    [defaultValues setObject:@"5" forKey:@"wordLength"];
-    [defaultValues setObject:@"8" forKey:@"guesses"];
-    [defaultValues setObject:@"true" forKey:@"evilPlay"];
-    [defaultValues setObject:@"true" forKey:@"currentEvilPlay"];
+    [defaultValues setObject:@"8" forKey:@"wordLength"];
+    [defaultValues setObject:@"12" forKey:@"guesses"];
+    [defaultValues setObject:@"1" forKey:@"evilPlay"];
+    [defaultValues setObject:@"1" forKey:@"currentEvilPlay"];
     [defaultValues setObject:@"-1" forKey:@"currentWord"];
     [defaultValues setObject:@"1.0" forKey:@"barProgress"];
     [defaultValues setObject:@"-1" forKey:@"barDegradation"];
-    [defaultValues setObject:@"false" forKey:@"gameNotFinished"];
+    [defaultValues setObject:@"0" forKey:@"gameNotFinished"];
     [defaultValues setObject:@"-1" forKey:@"currentGuesses"];
     [defaultValues setObject:[NSArray arrayWithObject:@"dummy"] forKey:@"pickedWord"];
     [defaultValues setObject:@"A B C D E F G H I J K L M N O P Q R S T U V W X Y Z"
@@ -114,7 +114,7 @@ id <GameplayDelegate> gameplay;
         
         // setup current guesses
         self.currentGuesses = self.totalGuesses;
-        
+
         // setup gameplay
         self.currentEvilGameplay = self.evilGameplay;
     }
@@ -127,7 +127,7 @@ id <GameplayDelegate> gameplay;
     
     // create a gameplay object
     if (self.currentEvilGameplay) {
-        gameplay = [[EvilGameplay alloc] init];
+        gameplay = [[EvilGameplay alloc] init]; 
     } else {
         gameplay = [[GoodGameplay alloc] init];
     }
